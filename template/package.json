@@ -20,7 +20,7 @@
     {{#store}}
     "vuex": "^2.2.1",
     {{/store}}
-    {{elementui}}
+    {{#elementui}}
     "element-ui": "^1.2.3",
     {{/elementui}}
     "autoprefixer": "^6.7.6",
