@@ -10,8 +10,16 @@ import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#store}}
 import store from './store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/store}}
+{{#elementui}}
+import ElementUI from 'element-ui'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import 'element-ui/lib/theme-default/index.css'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{/elementui}}
 
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+
+{{#elementui}}
+Vue.use(ElementUI){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{/elementui}}
 
 /* eslint-disable no-new */
 new Vue({
