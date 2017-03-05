@@ -50,7 +50,8 @@ module.exports = {
     },
     "lint": {
       "type": "confirm",
-      "message": "Use ESLint to lint your code?"
+      "message": "Use ESLint to lint your code?",
+      "default": false
     },
     "lintConfig": {
       "when": "lint",
@@ -76,11 +77,13 @@ module.exports = {
     },
     "unit": {
       "type": "confirm",
-      "message": "Setup unit tests with Karma + Mocha?"
+      "message": "Setup unit tests with Karma + Mocha?",
+      "default": false
     },
     "e2e": {
       "type": "confirm",
-      "message": "Setup e2e tests with Nightwatch?"
+      "message": "Setup e2e tests with Nightwatch?",
+      "default": false
     }
   },
   "filters": {
