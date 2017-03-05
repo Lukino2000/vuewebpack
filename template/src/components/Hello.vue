@@ -6,7 +6,7 @@
     <small>\{{ storemsg }}</small><br/>
     <input v-model="storemsg" />
     {{/store}}
-    {{elementui}}
+    {{#elementui}}
     <p>
       <el-input placeholder="Please input" v-model="msg"></el-input>
     </p>
