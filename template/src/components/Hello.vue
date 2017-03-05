@@ -2,8 +2,15 @@
   <div class="hello">
     <h1>\{{ msg }}</h1>
     {{#store}}
-    <small>\{{ greeting }}</small>
+    <small>\{{ greeting }}</small><br/>
+    <small>\{{ storemsg }}</small><br/>
+    <input v-model="storemsg" />
     {{/store}}
+    {{elementui}}
+    <p>
+      <el-input placeholder="Please input" v-model="msg"></el-input>
+    </p>
+    {{/elementui}}
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -26,6 +33,17 @@
 <script>
 {{#store}}
 import { mapGetters, mapActions } from 'vuex'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+
+function createProperty(propName, actionName) {
+  return {
+    get() {
+      return this.$store.state[propName]{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    },
+    set(value) {
+      this.$store.dispatch(actionName, value){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+  }
+}
 {{/store}}
 
 export default {
@@ -39,7 +57,8 @@ export default {
   computed: {
     ...mapGetters([
       'greeting'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-    ]){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    ]),
+    storemsg: createProperty('msg', 'setmsg'){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   },
   methods: {
     ...mapActions([
