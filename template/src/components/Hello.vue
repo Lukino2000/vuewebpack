@@ -7,9 +7,7 @@
     <input v-model="storemsg" />
     {{/store}}
     {{#elementui}}
-    <p>
-      <el-input placeholder="Please input" v-model="msg"></el-input>
-    </p>
+    <p><el-input placeholder="Please input" v-model="msg"></el-input></p>
     {{/elementui}}
     <h2>Essential Links</h2>
     <ul>
